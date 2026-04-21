@@ -16,7 +16,7 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-40 p-4">
       <nav className="max-w-5xl mx-auto flex items-center justify-between h-12 px-6 rounded-full bg-zinc-900/70 border border-zinc-800/50 backdrop-blur-md">
         <a href="/" className="font-display text-lg font-semibold text-zinc-100 flex items-center gap-2">
-          <img src="https://cdn.poehali.dev/projects/307a7106-8267-4453-b607-a8b56ec1617a/bucket/5dea514f-d85e-4471-bb40-5c9279d52a73.png" alt="SODA" className="w-8 h-8 object-contain" /> SODA
+          <img src="https://cdn.poehali.dev/projects/307a7106-8267-4453-b607-a8b56ec1617a/bucket/5dea514f-d85e-4471-bb40-5c9279d52a73.png" alt="SODA" className="w-10 h-10 object-contain" /> SODA
         </a>
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
