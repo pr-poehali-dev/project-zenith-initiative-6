@@ -19,6 +19,20 @@ export default {
 		},
 		extend: {
 			colors: {
+				soda: {
+					DEFAULT: '#3c441e',
+					50:  '#f5f6ee',
+					100: '#e8ebd4',
+					200: '#d2d8ac',
+					300: '#b5bf7a',
+					400: '#96a44e',
+					500: '#3c441e',
+					600: '#333b19',
+					700: '#2a3115',
+					800: '#202610',
+					900: '#161a0b',
+					950: '#0c0f06',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

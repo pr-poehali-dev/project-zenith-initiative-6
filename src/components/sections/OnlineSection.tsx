@@ -22,14 +22,14 @@ export function OnlineSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-2xl border border-yellow-900/30 bg-zinc-900/50 p-6 md:p-8 flex flex-col md:flex-row items-center gap-8"
+          className="rounded-2xl border border-soda-500/30 bg-zinc-900/50 p-6 md:p-8 flex flex-col md:flex-row items-center gap-8"
         >
           {/* Online indicator */}
           <div className="flex items-center gap-5 flex-shrink-0">
             <div className="relative">
               <div className="w-20 h-20 rounded-full border-4 border-zinc-800 flex items-center justify-center bg-zinc-950">
                 <motion.div
-                  className="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-700"
+                  className="w-12 h-12 rounded-full bg-gradient-to-br from-soda-300 to-soda-600"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
@@ -66,7 +66,7 @@ export function OnlineSection() {
             </div>
             <div className="h-3 rounded-full bg-zinc-800 overflow-hidden">
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-yellow-700 to-yellow-400"
+                className="h-full rounded-full bg-gradient-to-r from-soda-600 to-soda-300"
                 initial={{ width: 0 }}
                 animate={{ width: `${percent}%` }}
                 transition={{ duration: 1, ease: "easeOut" }}
@@ -99,7 +99,7 @@ export function OnlineSection() {
           {/* Connect button */}
           <a
             href="dayz://connect/soda-dayz.ru:2302"
-            className="flex-shrink-0 flex items-center gap-2 px-6 py-3 rounded-full bg-yellow-500 hover:bg-yellow-400 text-zinc-900 text-sm font-bold transition-all hover:scale-105 active:scale-95"
+            className="flex-shrink-0 flex items-center gap-2 px-6 py-3 rounded-full bg-soda-300 hover:bg-soda-200 text-zinc-900 text-sm font-bold transition-all hover:scale-105 active:scale-95 font-display tracking-widest uppercase"
           >
             <Icon name="Play" size={16} />
             Подключиться

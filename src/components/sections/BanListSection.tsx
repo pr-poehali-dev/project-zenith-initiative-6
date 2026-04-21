@@ -16,7 +16,7 @@ const bans = [
 const severityConfig = {
   perm: { label: "Навсегда", color: "text-red-400 bg-red-950/50 border-red-900/50" },
   long: { label: "Длительный", color: "text-orange-400 bg-orange-950/50 border-orange-900/50" },
-  mid: { label: "Средний", color: "text-yellow-400 bg-yellow-950/50 border-yellow-900/50" },
+  mid: { label: "Средний", color: "text-soda-300 bg-soda-950/50 border-soda-700/50" },
   short: { label: "Короткий", color: "text-blue-400 bg-blue-950/50 border-blue-900/50" },
 }
 

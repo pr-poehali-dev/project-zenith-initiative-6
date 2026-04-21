@@ -69,7 +69,7 @@ export function KillfeedSection() {
           <div className="px-6 py-4 border-b border-zinc-800/50 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <motion.div
-                className="w-2 h-2 rounded-full bg-red-500"
+                className="w-2 h-2 rounded-full bg-soda-300"
                 animate={{ opacity: [1, 0.3, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
@@ -95,11 +95,11 @@ export function KillfeedSection() {
                 >
                   {/* Type icon */}
                   <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${
-                    kill.type === "pvp" ? "bg-red-950" : kill.type === "zombie" ? "bg-zinc-800" : "bg-yellow-950"
+                    kill.type === "pvp" ? "bg-soda-950" : kill.type === "zombie" ? "bg-zinc-800" : "bg-zinc-800"
                   }`}>
-                    {kill.type === "pvp" && <Icon name="Crosshair" size={14} className="text-red-400" />}
+                    {kill.type === "pvp" && <Icon name="Crosshair" size={14} className="text-soda-300" />}
                     {kill.type === "zombie" && <span className="text-xs">🧟</span>}
-                    {kill.type === "environment" && <Icon name="Skull" size={14} className="text-yellow-500" />}
+                    {kill.type === "environment" && <Icon name="Skull" size={14} className="text-zinc-400" />}
                   </div>
 
                   {/* Kill info */}
@@ -109,7 +109,7 @@ export function KillfeedSection() {
                       <span className="text-zinc-600 text-xs">убил</span>
                       <span className="text-zinc-400 text-sm">{kill.victim}</span>
                       <span className="text-zinc-600 text-xs">из</span>
-                      <span className="text-red-400 text-sm font-medium">{kill.weapon}</span>
+                      <span className="text-soda-300 text-sm font-medium">{kill.weapon}</span>
                       {kill.distance && (
                         <>
                           <span className="text-zinc-600 text-xs">с</span>
