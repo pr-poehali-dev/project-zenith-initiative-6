@@ -6,32 +6,32 @@ const features = [
   {
     icon: "Map",
     title: "Chernarus 2024",
-    desc: "Полностью кастомизированная карта с новыми локациями, схронами и уникальными точками интереса.",
+    desc: "Fully customized map with new locations, caches, and unique points of interest.",
   },
   {
     icon: "Zap",
-    title: "Высокий лут",
-    desc: "Сбалансированная экономика предметов — каждый рейд имеет смысл, хороший лут не банальщина.",
+    title: "High Loot",
+    desc: "Balanced item economy — every raid matters, good loot is never trivial.",
   },
   {
     icon: "Shield",
-    title: "Античит",
-    desc: "Постоянный мониторинг, быстрые баны, нулевая терпимость к читерам и токсикам.",
+    title: "Anti-Cheat",
+    desc: "Constant monitoring, quick bans, zero tolerance for cheaters and toxic players.",
   },
   {
     icon: "Users",
-    title: "Живое сообщество",
-    desc: "Активный Discord, регулярные ивенты, турниры и сезонные события от администрации.",
+    title: "Active Community",
+    desc: "Active Discord, regular events, tournaments and seasonal events from administration.",
   },
   {
     icon: "Crosshair",
-    title: "PvP-зоны",
-    desc: "Специальные hot-зоны для интенсивного PvP — всегда есть где сразиться.",
+    title: "PvP Zones",
+    desc: "Special hot zones for intense PvP — there's always somewhere to fight.",
   },
   {
     icon: "Package",
-    title: "Торговля",
-    desc: "Система трейдеров и игрового рынка. Зарабатывай на крафте и торговле.",
+    title: "Trading",
+    desc: "Trader system and in-game market. Earn through crafting and trading.",
   },
 ]
 
@@ -45,12 +45,12 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">О сервере</p>
+          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">About the server</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
-            Почему именно SODA?
+            Why exactly SODA?
           </h2>
           <p className="text-zinc-500 max-w-xl mx-auto">
-            Мы не просто сервер. Мы — место, где выживание превращается в настоящую историю.
+            We're not just a server. We're a place where survival becomes a real story.
           </p>
         </motion.div>
 

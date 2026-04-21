@@ -3,47 +3,47 @@ import { motion } from "framer-motion"
 const socials = [
   {
     name: "Discord",
-    description: "Живой чат, события, обсуждения",
+    description: "Live chat, events, discussions",
     color: "from-indigo-600 to-indigo-800",
     borderColor: "border-indigo-800/50 hover:border-indigo-600/60",
     bgGlow: "bg-indigo-600/10",
     icon: "💬",
     href: "#",
     members: "1,200+",
-    label: "участников",
+    label: "members",
   },
   {
     name: "VK",
-    description: "Новости, скриншоты, объявления",
+    description: "News, screenshots, announcements",
     color: "from-blue-600 to-blue-800",
     borderColor: "border-blue-800/50 hover:border-blue-600/60",
     bgGlow: "bg-blue-600/10",
     icon: "🔵",
     href: "#",
     members: "3,400+",
-    label: "подписчиков",
+    label: "subscribers",
   },
   {
-    name: "Онлайн-магазин",
-    description: "Привилегии, кейсы, кастомизация",
+    name: "Online Shop",
+    description: "Privileges, cases, customization",
     color: "from-red-600 to-red-800",
     borderColor: "border-red-800/50 hover:border-red-600/60",
     bgGlow: "bg-red-600/10",
     icon: "🛒",
     href: "#shop",
     members: "500+",
-    label: "товаров",
+    label: "items",
   },
   {
     name: "WarGM",
-    description: "Боевые миссии и турниры",
+    description: "Combat missions and tournaments",
     color: "from-orange-600 to-orange-800",
     borderColor: "border-orange-800/50 hover:border-orange-600/60",
     bgGlow: "bg-orange-600/10",
     icon: "⚔️",
     href: "#",
     members: "TOP",
-    label: "сервер",
+    label: "server",
   },
 ]
 
@@ -57,9 +57,9 @@ export function SocialSection() {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-3">Сообщество</p>
+          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-3">Community</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-zinc-100">
-            Присоединяйся к нам
+            Join us
           </h2>
         </motion.div>
 

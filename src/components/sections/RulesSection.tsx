@@ -5,50 +5,50 @@ import Icon from "@/components/ui/icon"
 const ruleCategories = [
   {
     id: "general",
-    title: "Общие правила",
+    title: "General Rules",
     icon: "BookOpen",
     rules: [
-      "Уважительное отношение ко всем игрокам и администрации.",
-      "Запрещён расизм, оскорбления, дискриминация в любой форме.",
-      "Запрещены читы, хаки, дюпы и любые эксплойты.",
-      "Запрещено намеренно разрушать игровой опыт других игроков.",
-      "Никнейм не должен содержать нецензурную лексику или оскорбления.",
-      "Администрация оставляет за собой право вынести бан без предупреждения при грубых нарушениях.",
+      "Respectful treatment of all players and administration.",
+      "Racism, insults, and discrimination in any form are forbidden.",
+      "Cheats, hacks, dupes and any exploits are forbidden.",
+      "Intentionally ruining other players' experience is forbidden.",
+      "Nicknames must not contain profanity or insults.",
+      "Administration reserves the right to ban without warning for serious violations.",
     ],
   },
   {
     id: "pvp",
-    title: "PvP правила",
+    title: "PvP Rules",
     icon: "Crosshair",
     rules: [
-      "KOS (Kill on Sight) разрешён только в обозначенных PvP-зонах.",
-      "Запрещено убивать игроков в сейф-зонах и у трейдеров.",
-      "Перед ограблением обязательно взаимодействие (текстом или голосом).",
-      "Запрещено убивать заложника, если выполнены все условия.",
-      "Запрещён беспричинный KOS новых игроков (bambis) в безопасных зонах.",
+      "KOS (Kill on Sight) is allowed only in designated PvP zones.",
+      "Killing players in safe zones and at traders is forbidden.",
+      "Interaction (text or voice) is required before robbery.",
+      "Killing a hostage after all conditions are met is forbidden.",
+      "Unjustified KOS of new players (bambis) in safe zones is forbidden.",
     ],
   },
   {
     id: "base",
-    title: "Базы и строительство",
+    title: "Bases & Construction",
     icon: "Home",
     rules: [
-      "Запрещено строить на спавн-точках и у трейдеров (ближе 200 м).",
-      "Максимальный размер базы — 20×20 блоков.",
-      "Запрещена постройка, блокирующая лут-споты и проходы.",
-      "Базы без активности 14 дней могут быть снесены администрацией.",
-      "Рейды только в игровое время (10:00–00:00 по МСК).",
+      "Building at spawn points and near traders (within 200m) is forbidden.",
+      "Maximum base size is 20×20 blocks.",
+      "Construction blocking loot spots and passages is forbidden.",
+      "Bases inactive for 14 days may be removed by administration.",
+      "Raids are only allowed during game hours (10:00–00:00 MSK).",
     ],
   },
   {
     id: "rp",
-    title: "Ролевые правила",
+    title: "Roleplay Rules",
     icon: "MessageSquare",
     rules: [
-      "Соблюдайте RP-нормы — это часть атмосферы сервера.",
-      "Запрещён выход из игры во время RP-сцены или ограбления.",
-      "Meta-gaming (использование информации вне игры) — бан.",
-      "Нельзя ссылаться на реальный мир в ролевых ситуациях.",
+      "Follow RP norms — they are part of the server atmosphere.",
+      "Exiting the game during RP scenes or robberies is forbidden.",
+      "Meta-gaming (using out-of-game information) results in a ban.",
+      "Referencing the real world in roleplay situations is forbidden.",
     ],
   },
 ]
@@ -66,12 +66,12 @@ export function RulesSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">Правила</p>
+          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">Rules</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
-            Правила сервера SODA
+            SODA Server Rules
           </h2>
           <p className="text-zinc-500 max-w-xl mx-auto">
-            Нарушение правил ведёт к бану без предупреждения. Незнание правил — не оправдание.
+            Violating the rules results in a ban without warning. Ignorance of the rules is not an excuse.
           </p>
         </motion.div>
 
@@ -131,7 +131,7 @@ export function RulesSection() {
         >
           <Icon name="AlertTriangle" fallback="Star" size={18} className="text-red-500 flex-shrink-0 mt-0.5" />
           <p className="text-sm text-zinc-500">
-            <span className="text-red-400 font-medium">Важно:</span> Администрация оставляет за собой право изменять правила без уведомления. Следите за обновлениями в Discord.
+            <span className="text-red-400 font-medium">Important:</span> Administration reserves the right to change rules without notice. Follow updates on Discord.
           </p>
         </motion.div>
       </div>

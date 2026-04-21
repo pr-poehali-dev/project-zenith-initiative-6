@@ -51,7 +51,7 @@ export function OnlineSection() {
                 </motion.span>
                 <span className="text-zinc-500 text-2xl">/{maxSlots}</span>
               </div>
-              <div className="text-zinc-400 text-sm">игроков онлайн</div>
+              <div className="text-zinc-400 text-sm">players online</div>
             </div>
           </div>
 
@@ -61,7 +61,7 @@ export function OnlineSection() {
           {/* Progress bar */}
           <div className="flex-1 w-full">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-sm text-zinc-400 font-medium">Заполненность сервера</span>
+              <span className="text-sm text-zinc-400 font-medium">Server capacity</span>
               <span className="text-sm text-zinc-300 font-bold">{percent}%</span>
             </div>
             <div className="h-3 rounded-full bg-zinc-800 overflow-hidden">
@@ -78,16 +78,16 @@ export function OnlineSection() {
                 animate={{ opacity: [1, 0.3, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
-              <span className="text-xs text-zinc-500">Сервер работает в штатном режиме</span>
+              <span className="text-xs text-zinc-500">Server operating normally</span>
             </div>
           </div>
 
           {/* Server info */}
           <div className="flex flex-col gap-3 flex-shrink-0">
             {[
-              { label: "Карта", value: "Chernarus" },
-              { label: "Версия", value: "1.25" },
-              { label: "Тип", value: "PvP/RP" },
+              { label: "Map", value: "Chernarus" },
+              { label: "Version", value: "1.25" },
+              { label: "Type", value: "PvP/RP" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-3">
                 <span className="text-xs text-zinc-500 w-16">{item.label}</span>
@@ -102,7 +102,7 @@ export function OnlineSection() {
             className="flex-shrink-0 flex items-center gap-2 px-6 py-3 rounded-full bg-soda-300 hover:bg-soda-200 text-zinc-900 text-sm font-bold transition-all hover:scale-105 active:scale-95 font-display tracking-widest uppercase"
           >
             <Icon name="Play" size={16} />
-            Подключиться
+            Connect
           </a>
         </motion.div>
       </div>

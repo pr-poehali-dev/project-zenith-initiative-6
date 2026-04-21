@@ -13,17 +13,17 @@ interface KillEntry {
 }
 
 const initialKills: KillEntry[] = [
-  { id: 1, killer: "GhostRaider", victim: "NewSurvivor22", weapon: "M4A1", distance: 187, time: "2 мин назад", type: "pvp" },
-  { id: 2, killer: "DarkWolf", victim: "SodaPlayer99", weapon: "SVD", distance: 312, time: "5 мин назад", type: "pvp" },
-  { id: 3, killer: "Zombie", victim: "LootRunner", weapon: "Укус", time: "7 мин назад", type: "zombie" },
-  { id: 4, killer: "RedFox", victim: "BunkerKing", weapon: "AKM", distance: 54, time: "12 мин назад", type: "pvp" },
-  { id: 5, killer: "IronGhost", victim: "SurvivalAce", weapon: "MP5K", distance: 28, time: "15 мин назад", type: "pvp" },
-  { id: 6, killer: "Голод", victim: "Drifter88", weapon: "—", time: "18 мин назад", type: "environment" },
-  { id: 7, killer: "NightStalker", victim: "GhostRaider", weapon: "Blaze 95", distance: 201, time: "22 мин назад", type: "pvp" },
-  { id: 8, killer: "StormBear", victim: "LoneWolf7", weapon: "Mosin", distance: 498, time: "28 мин назад", type: "pvp" },
+  { id: 1, killer: "GhostRaider", victim: "NewSurvivor22", weapon: "M4A1", distance: 187, time: "2 min ago", type: "pvp" },
+  { id: 2, killer: "DarkWolf", victim: "SodaPlayer99", weapon: "SVD", distance: 312, time: "5 min ago", type: "pvp" },
+  { id: 3, killer: "Zombie", victim: "LootRunner", weapon: "Bite", time: "7 min ago", type: "zombie" },
+  { id: 4, killer: "RedFox", victim: "BunkerKing", weapon: "AKM", distance: 54, time: "12 min ago", type: "pvp" },
+  { id: 5, killer: "IronGhost", victim: "SurvivalAce", weapon: "MP5K", distance: 28, time: "15 min ago", type: "pvp" },
+  { id: 6, killer: "Starvation", victim: "Drifter88", weapon: "—", time: "18 min ago", type: "environment" },
+  { id: 7, killer: "NightStalker", victim: "GhostRaider", weapon: "Blaze 95", distance: 201, time: "22 min ago", type: "pvp" },
+  { id: 8, killer: "StormBear", victim: "LoneWolf7", weapon: "Mosin", distance: 498, time: "28 min ago", type: "pvp" },
 ]
 
-const weapons = ["M4A1", "AKM", "SVD", "MP5K", "Mosin", "Blaze 95", "Glock 19", "Кулак"]
+const weapons = ["M4A1", "AKM", "SVD", "MP5K", "Mosin", "Blaze 95", "Glock 19", "Fists"]
 const names = ["Survivor", "DarkHunter", "RedWolf", "NightOwl", "SodaFan", "Raider", "Ghost", "Iron"]
 
 function randomName() { return names[Math.floor(Math.random() * names.length)] + Math.floor(Math.random() * 99) }
@@ -40,7 +40,7 @@ export function KillfeedSection() {
         victim: randomName(),
         weapon: randomWeapon(),
         distance: Math.random() > 0.3 ? Math.floor(Math.random() * 500) + 10 : undefined,
-        time: "только что",
+        time: "just now",
         type: "pvp",
       }
       setKills(prev => [newKill, ...prev.slice(0, 9)])
@@ -57,11 +57,11 @@ export function KillfeedSection() {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">Килфид</p>
+          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">Killfeed</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
-            Лента убийств
+            Kill Feed
           </h2>
-          <p className="text-zinc-500">Что происходит на сервере прямо сейчас</p>
+          <p className="text-zinc-500">What's happening on the server right now</p>
         </motion.div>
 
         <div className="rounded-2xl border border-zinc-800/50 bg-zinc-900/50 overflow-hidden">
@@ -77,7 +77,7 @@ export function KillfeedSection() {
             </div>
             <span className="text-xs text-zinc-600 flex items-center gap-1.5">
               <Icon name="RefreshCw" size={12} />
-              Обновляется в реальном времени
+              Updates in real time
             </span>
           </div>
 
@@ -106,14 +106,14 @@ export function KillfeedSection() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="text-zinc-100 font-medium text-sm">{kill.killer}</span>
-                      <span className="text-zinc-600 text-xs">убил</span>
+                      <span className="text-zinc-600 text-xs">killed</span>
                       <span className="text-zinc-400 text-sm">{kill.victim}</span>
-                      <span className="text-zinc-600 text-xs">из</span>
+                      <span className="text-zinc-600 text-xs">with</span>
                       <span className="text-soda-300 text-sm font-medium">{kill.weapon}</span>
                       {kill.distance && (
                         <>
-                          <span className="text-zinc-600 text-xs">с</span>
-                          <span className="text-zinc-300 text-xs font-mono">{kill.distance}м</span>
+                          <span className="text-zinc-600 text-xs">from</span>
+                          <span className="text-zinc-300 text-xs font-mono">{kill.distance}m</span>
                         </>
                       )}
                     </div>

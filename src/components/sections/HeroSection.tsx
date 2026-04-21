@@ -2,11 +2,11 @@ import { motion } from "framer-motion"
 import Icon from "@/components/ui/icon"
 
 const features = [
-  { icon: "Shield", title: "СТАБИЛЬНОСТЬ", sub: "24/7 работа сервера" },
-  { icon: "Crosshair", title: "ЧЕСТНАЯ ИГРА", sub: "Без читов" },
-  { icon: "Users", title: "СООБЩЕСТВО", sub: "Помощь новичкам" },
-  { icon: "Settings", title: "БАЛАНСНЫЕ МОДЫ", sub: "Для комфортной игры" },
-  { icon: "Swords", title: "PVP", sub: "Жёсткие схватки" },
+  { icon: "Shield", title: "STABILITY", sub: "24/7 server uptime" },
+  { icon: "Crosshair", title: "FAIR PLAY", sub: "No cheats" },
+  { icon: "Users", title: "COMMUNITY", sub: "Help for beginners" },
+  { icon: "Settings", title: "BALANCED MODS", sub: "For comfortable gameplay" },
+  { icon: "Swords", title: "PVP", sub: "Hardcore battles" },
 ]
 
 export function HeroSection() {
@@ -72,8 +72,8 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-lg md:text-2xl font-display tracking-wide mb-10 uppercase"
         >
-          <span className="text-zinc-100">ТЫ УЖЕ ЗДЕСЬ.&nbsp;</span>
-          <span className="text-soda-300">ПРОСТО ЕЩЁ НЕ ОСОЗНАЛ.</span>
+          <span className="text-zinc-100">YOU'RE ALREADY HERE.&nbsp;</span>
+          <span className="text-soda-300">YOU JUST DON'T REALIZE IT YET.</span>
         </motion.p>
 
         {/* Feature icons row */}
@@ -118,7 +118,7 @@ export function HeroSection() {
           >
             <Icon name="Server" size={18} className="text-soda-300 group-hover:text-zinc-900 transition-colors" />
             <span className="text-soda-200 group-hover:text-zinc-900 font-display tracking-[0.2em] uppercase text-sm transition-colors">
-              Подключайся
+              Connect
             </span>
             <Icon name="ChevronRight" size={18} className="text-soda-300 group-hover:text-zinc-900 group-hover:translate-x-1 transition-all" />
           </a>
@@ -141,7 +141,7 @@ export function HeroSection() {
             animate={{ opacity: [1, 0.3, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />
-          <span className="text-xs text-zinc-500 tracking-widest uppercase font-display">Сервер онлайн — присоединяйся прямо сейчас</span>
+          <span className="text-xs text-zinc-500 tracking-widest uppercase font-display">Server online — join right now</span>
         </motion.div>
       </div>
     </section>

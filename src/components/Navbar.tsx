@@ -2,11 +2,11 @@ import { useState } from "react"
 import Icon from "@/components/ui/icon"
 
 const navLinks = [
-  { href: "#about", label: "О сервере" },
-  { href: "#rules", label: "Правила" },
-  { href: "#news", label: "Новости" },
-  { href: "#killfeed", label: "Килфид" },
-  { href: "#banlist", label: "Бан-лист" },
+  { href: "#about", label: "About" },
+  { href: "#rules", label: "Rules" },
+  { href: "#news", label: "News" },
+  { href: "#killfeed", label: "Killfeed" },
+  { href: "#banlist", label: "Ban list" },
 ]
 
 export function Navbar() {
@@ -32,7 +32,7 @@ export function Navbar() {
             href="#shop"
             className="ml-2 px-4 py-1.5 text-sm rounded-full bg-soda-300 text-zinc-900 font-medium hover:bg-soda-200 transition-colors"
           >
-            Магазин
+            Shop
           </a>
         </div>
         <button className="md:hidden text-zinc-400" onClick={() => setOpen(!open)}>
@@ -47,7 +47,7 @@ export function Navbar() {
             </a>
           ))}
           <a href="#shop" onClick={() => setOpen(false)} className="px-4 py-2 text-sm text-center rounded-xl bg-soda-300 text-zinc-900 font-medium hover:bg-soda-200 transition-colors mt-1">
-            Магазин
+            Shop
           </a>
         </div>
       )}

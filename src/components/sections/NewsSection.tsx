@@ -4,39 +4,39 @@ import Icon from "@/components/ui/icon"
 const news = [
   {
     id: 1,
-    tag: "Обновление",
+    tag: "Update",
     tagColor: "text-green-400 bg-green-950/50 border-green-900/50",
-    title: "Патч 1.25 — новые локации и баланс лута",
-    date: "18 апреля 2026",
-    preview: "Добавили три новые военные локации на севере карты. Пересмотрели таблицу спавна лута, теперь M4 встречается реже, а охота на снаряжение стала интереснее.",
-    readTime: "3 мин",
+    title: "Patch 1.25 — new locations and loot balance",
+    date: "April 18, 2026",
+    preview: "Added three new military locations in the north of the map. Revised the loot spawn table — M4 is now rarer, making gear hunting more exciting.",
+    readTime: "3 min",
   },
   {
     id: 2,
-    tag: "Ивент",
+    tag: "Event",
     tagColor: "text-orange-400 bg-orange-950/50 border-orange-900/50",
-    title: "Ивент «Охота на Выжившего» — 25 апреля",
-    date: "15 апреля 2026",
-    preview: "Специальный ивент с уникальными наградами. Один игрок — цель, все остальные — охотники. Победитель получит эксклюзивный скин и 3000 монет.",
-    readTime: "2 мин",
+    title: "Event 'Survivor Hunt' — April 25",
+    date: "April 15, 2026",
+    preview: "Special event with unique rewards. One player is the target, everyone else are hunters. The winner gets an exclusive skin and 3000 coins.",
+    readTime: "2 min",
   },
   {
     id: 3,
-    tag: "Сервер",
+    tag: "Server",
     tagColor: "text-blue-400 bg-blue-950/50 border-blue-900/50",
-    title: "Технические работы 20 апреля 03:00–06:00",
-    date: "12 апреля 2026",
-    preview: "Проводим плановое обслуживание сервера. Обновление ядра, оптимизация базы данных. Приносим извинения за неудобства.",
-    readTime: "1 мин",
+    title: "Maintenance April 20, 03:00–06:00",
+    date: "April 12, 2026",
+    preview: "Scheduled server maintenance. Core update, database optimization. We apologize for any inconvenience.",
+    readTime: "1 min",
   },
   {
     id: 4,
-    tag: "Магазин",
+    tag: "Shop",
     tagColor: "text-red-400 bg-red-950/50 border-red-900/50",
-    title: "Новые привилегии в магазине",
-    date: "8 апреля 2026",
-    preview: "Добавили ранги Survivor и Raider с уникальными бонусами. Специальная скидка 20% на все пакеты до конца апреля.",
-    readTime: "2 мин",
+    title: "New privileges in the shop",
+    date: "April 8, 2026",
+    preview: "Added Survivor and Raider ranks with unique bonuses. Special 20% discount on all packages until end of April.",
+    readTime: "2 min",
   },
 ]
 
@@ -51,13 +51,13 @@ export function NewsSection() {
           className="flex items-end justify-between mb-10"
         >
           <div>
-            <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-3">Новости</p>
+            <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-3">News</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-zinc-100">
-              Что нового на SODA
+              What's new on SODA
             </h2>
           </div>
           <a href="#" className="hidden md:flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors">
-            Все новости
+            All news
             <Icon name="ArrowRight" size={16} />
           </a>
         </motion.div>
@@ -91,7 +91,7 @@ export function NewsSection() {
                 </h3>
                 <p className="text-zinc-500 text-sm leading-relaxed line-clamp-2">{item.preview}</p>
                 <div className="flex items-center gap-2 mt-4 text-xs text-zinc-600 group-hover:text-zinc-400 transition-colors">
-                  <span>Читать далее</span>
+                  <span>Read more</span>
                   <Icon name="ArrowRight" size={12} className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
