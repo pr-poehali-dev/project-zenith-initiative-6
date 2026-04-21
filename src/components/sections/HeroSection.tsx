@@ -12,20 +12,6 @@ const features = [
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-zinc-950">
-      {/* Hidden SVG distress filter */}
-      <svg width="0" height="0" className="absolute">
-        <defs>
-          <filter id="distress">
-            <feTurbulence type="fractalNoise" baseFrequency="0.065" numOctaves="4" seed="2" result="noise" />
-            <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise" />
-            <feComponentTransfer in="grayNoise" result="threshNoise">
-              <feFuncA type="discrete" tableValues="0 0 0 0 0 0 1 1" />
-            </feComponentTransfer>
-            <feComposite in="SourceGraphic" in2="threshNoise" operator="in" />
-          </filter>
-        </defs>
-      </svg>
-
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-right bg-no-repeat"
@@ -56,10 +42,12 @@ export function HeroSection() {
           className="mb-2"
         >
           <h1
-            className="font-display text-[clamp(80px,16vw,180px)] font-black leading-none tracking-wider text-white"
+            className="font-display text-[clamp(80px,16vw,180px)] font-black leading-none tracking-wider text-white select-none"
             style={{
-              filter: "url(#distress)",
-              textShadow: "3px 3px 0px rgba(0,0,0,0.9)",
+              textShadow: "4px 4px 0px rgba(0,0,0,0.9), 0 0 40px rgba(0,0,0,0.5)",
+              WebkitTextStroke: "2px rgba(255,255,255,0.06)",
+              backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E\")",
+              WebkitBackgroundClip: "text",
             }}
           >
             SODA
