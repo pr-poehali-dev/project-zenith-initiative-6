@@ -1,9 +1,12 @@
 import { Navbar } from "@/components/Navbar"
 import { HeroSection } from "@/components/sections/HeroSection"
-import { FeaturesSection } from "@/components/sections/FeaturesSection"
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection"
-import { PricingSection } from "@/components/sections/PricingSection"
-import { CtaSection } from "@/components/sections/CtaSection"
+import { OnlineSection } from "@/components/sections/OnlineSection"
+import { SocialSection } from "@/components/sections/SocialSection"
+import { AboutSection } from "@/components/sections/AboutSection"
+import { RulesSection } from "@/components/sections/RulesSection"
+import { NewsSection } from "@/components/sections/NewsSection"
+import { KillfeedSection } from "@/components/sections/KillfeedSection"
+import { BanListSection } from "@/components/sections/BanListSection"
 import { FooterSection } from "@/components/sections/FooterSection"
 
 const Index = () => {
@@ -12,10 +15,13 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <FeaturesSection />
-        <TestimonialsSection />
-        <PricingSection />
-        <CtaSection />
+        <OnlineSection />
+        <SocialSection />
+        <AboutSection />
+        <RulesSection />
+        <NewsSection />
+        <KillfeedSection />
+        <BanListSection />
       </main>
       <FooterSection />
     </div>
