@@ -7,7 +7,7 @@ export function FooterSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           <div className="col-span-2 md:col-span-1">
             <a href="/" className="font-display text-xl font-semibold text-zinc-100 flex items-center gap-2">
-              <span className="text-red-500">☢</span> SODA
+              <img src="https://cdn.poehali.dev/projects/307a7106-8267-4453-b607-a8b56ec1617a/bucket/869d60fb-51b7-4bed-92d5-c5c09897a0d4.png" alt="SODA" className="w-8 h-8 object-contain" /> SODA
             </a>
             <p className="mt-4 text-sm text-zinc-500 max-w-xs">
               DayZ сервер для тех, кто выживает по-настоящему. Без компромиссов.
