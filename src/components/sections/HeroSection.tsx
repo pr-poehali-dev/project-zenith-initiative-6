@@ -15,7 +15,7 @@ export function HeroSection() {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-right bg-no-repeat"
-        style={{ backgroundImage: `url('https://cdn.poehali.dev/projects/307a7106-8267-4453-b607-a8b56ec1617a/files/b45ba0b1-63ac-445b-b331-7535548fe7d0.jpg')` }}
+        style={{ backgroundImage: `url('https://cdn.poehali.dev/projects/307a7106-8267-4453-b607-a8b56ec1617a/bucket/d5671c86-e25c-474f-8d9f-9c2bbf540c65.png')` }}
       />
       <div className="absolute inset-0 bg-zinc-950/55" />
       <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/85 to-transparent" />
