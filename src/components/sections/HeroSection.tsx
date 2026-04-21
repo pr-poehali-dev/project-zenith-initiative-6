@@ -28,12 +28,12 @@ export function HeroSection() {
 
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('https://cdn.poehali.dev/projects/307a7106-8267-4453-b607-a8b56ec1617a/bucket/a88e331e-b821-4dcf-97f9-a94a98f5ed94.png')` }}
+        className="absolute inset-0 bg-cover bg-right bg-no-repeat"
+        style={{ backgroundImage: `url('https://cdn.poehali.dev/projects/307a7106-8267-4453-b607-a8b56ec1617a/bucket/f653f245-35da-4c85-af19-6ea20f73c191.png')` }}
       />
-      <div className="absolute inset-0 bg-zinc-950/78" />
-      <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/97 via-zinc-950/72 to-zinc-950/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/60" />
+      <div className="absolute inset-0 bg-zinc-950/55" />
+      <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/85 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/70" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-12 w-full">
         {/* Top label */}
