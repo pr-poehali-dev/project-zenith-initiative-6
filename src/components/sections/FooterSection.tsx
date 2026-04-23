@@ -56,21 +56,7 @@ export function FooterSection() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-heading text-sm font-semibold text-zinc-100 mb-4">Shop</h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Privileges", href: "#shop" },
-                { label: "Cases", href: "#shop" },
-                { label: "WarGM", href: "#" },
-                { label: "Support", href: "#" },
-              ].map(link => (
-                <li key={link.label}>
-                  <a href={link.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">{link.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+
         </div>
 
         <div className="pt-8 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between gap-4">

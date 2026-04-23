@@ -1,19 +1,9 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import Icon from "@/components/ui/icon"
+import { useSite } from "@/context/SiteContext"
 
-const bans = [
-  { id: 1, player: "HackMaster666", reason: "Читы (ESP + Aimbot)", date: "19.04.2026", duration: "Навсегда", severity: "perm" },
-  { id: 2, player: "DupeFarm99", reason: "Дюп предметов", date: "18.04.2026", duration: "30 дней", severity: "long" },
-  { id: 3, player: "ToxicRager", reason: "Систематические оскорбления", date: "17.04.2026", duration: "7 дней", severity: "mid" },
-  { id: 4, player: "WallWalker", reason: "Эксплойт сквозь стены", date: "16.04.2026", duration: "Навсегда", severity: "perm" },
-  { id: 5, player: "BaseCamper22", reason: "Нарушение правил рейда", date: "15.04.2026", duration: "3 дня", severity: "short" },
-  { id: 6, player: "SafeZoneKiller", reason: "Убийство в сейф-зоне", date: "14.04.2026", duration: "7 дней", severity: "mid" },
-  { id: 7, player: "FloodSpammer", reason: "Спам в чате", date: "13.04.2026", duration: "1 день", severity: "short" },
-  { id: 8, player: "InvisCheat", reason: "Чит-программа", date: "12.04.2026", duration: "Навсегда", severity: "perm" },
-]
-
-const severityConfig = {
+export const severityConfig = {
   perm: { label: "Навсегда", color: "text-red-400 bg-red-950/50 border-red-900/50" },
   long: { label: "Длительный", color: "text-orange-400 bg-orange-950/50 border-orange-900/50" },
   mid: { label: "Средний", color: "text-soda-300 bg-soda-950/50 border-soda-700/50" },
@@ -22,6 +12,7 @@ const severityConfig = {
 
 export function BanListSection() {
   const [search, setSearch] = useState("")
+  const { bans } = useSite()
 
   const filtered = bans.filter(
     b => b.player.toLowerCase().includes(search.toLowerCase()) || b.reason.toLowerCase().includes(search.toLowerCase())
@@ -43,7 +34,6 @@ export function BanListSection() {
           <p className="text-zinc-500">Мы не терпим читеров и токсиков. Все баны публичны.</p>
         </motion.div>
 
-        {/* Search */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,14 +50,12 @@ export function BanListSection() {
           />
         </motion.div>
 
-        {/* Table */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="rounded-2xl border border-zinc-800/50 overflow-hidden"
         >
-          {/* Table header */}
           <div className="px-6 py-3 bg-zinc-900/80 border-b border-zinc-800/50 grid grid-cols-12 gap-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">
             <span className="col-span-3">Игрок</span>
             <span className="col-span-4">Причина</span>
@@ -75,7 +63,6 @@ export function BanListSection() {
             <span className="col-span-3">Срок</span>
           </div>
 
-          {/* Rows */}
           <div className="divide-y divide-zinc-800/30">
             {filtered.length === 0 ? (
               <div className="py-12 text-center text-zinc-600 text-sm">Ничего не найдено</div>

@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { NewsProvider } from "@/context/NewsContext";
+import { SiteProvider } from "@/context/SiteContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -13,6 +14,7 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <LanguageProvider>
+    <SiteProvider>
     <NewsProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
@@ -28,6 +30,7 @@ const App = () => (
         </TooltipProvider>
       </QueryClientProvider>
     </NewsProvider>
+    </SiteProvider>
   </LanguageProvider>
 );
 

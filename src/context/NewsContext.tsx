@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react"
+import { createContext, useContext, useState, ReactNode, useEffect } from "react"
 
 export type NewsTag = "Update" | "Server" | "Shop" | "Event"
 
@@ -58,6 +58,15 @@ const initialNews: NewsItem[] = [
   },
 ]
 
+function loadFromStorage<T>(key: string, fallback: T): T {
+  try {
+    const raw = localStorage.getItem(key)
+    return raw ? (JSON.parse(raw) as T) : fallback
+  } catch {
+    return fallback
+  }
+}
+
 interface NewsContextType {
   news: NewsItem[]
   addNews: (item: Omit<NewsItem, "id" | "tagColor">) => void
@@ -68,15 +77,15 @@ interface NewsContextType {
 const NewsContext = createContext<NewsContextType | null>(null)
 
 export function NewsProvider({ children }: { children: ReactNode }) {
-  const [news, setNews] = useState<NewsItem[]>(initialNews)
+  const [news, setNews] = useState<NewsItem[]>(() => loadFromStorage("soda_news", initialNews))
+
+  useEffect(() => {
+    localStorage.setItem("soda_news", JSON.stringify(news))
+  }, [news])
 
   function addNews(item: Omit<NewsItem, "id" | "tagColor">) {
     setNews((prev) => [
-      {
-        ...item,
-        id: Date.now(),
-        tagColor: TAG_COLORS[item.tag],
-      },
+      { ...item, id: Date.now(), tagColor: TAG_COLORS[item.tag] },
       ...prev,
     ])
   }

@@ -1,7 +1,10 @@
 import { motion } from "framer-motion"
+import { useState } from "react"
 import Icon from "@/components/ui/icon"
 import { useLang } from "@/context/LanguageContext"
 import { LedTicker } from "@/components/LedTicker"
+
+const SERVER_IP = "109.248.4.240:2402"
 
 const features = [
   { icon: "Shield", titleKey: "STABILITY", subKey: "24/7 server uptime" },
@@ -13,6 +16,14 @@ const features = [
 
 export function HeroSection() {
   const { t } = useLang()
+  const [copied, setCopied] = useState(false)
+
+  function copyIP() {
+    navigator.clipboard.writeText(SERVER_IP).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-zinc-950">
@@ -127,10 +138,17 @@ export function HeroSection() {
             <Icon name="ChevronRight" size={18} className="text-soda-300 group-hover:text-zinc-900 group-hover:translate-x-1 transition-all" />
           </a>
 
-          <div className="flex items-center gap-3 px-8 py-4 border border-zinc-700/60 bg-zinc-900/60 backdrop-blur-sm">
-            <Icon name="Globe" size={18} className="text-zinc-500" />
-            <span className="text-zinc-300 font-mono text-sm tracking-widest">109.248.4.240:2402</span>
-          </div>
+          <button
+            onClick={copyIP}
+            className="group flex items-center gap-3 px-8 py-4 border border-zinc-700/60 bg-zinc-900/60 backdrop-blur-sm hover:border-zinc-500 hover:bg-zinc-800/60 transition-all cursor-pointer"
+            title="Нажми, чтобы скопировать IP"
+          >
+            <Icon name={copied ? "Check" : "Globe"} size={18} className={copied ? "text-green-400" : "text-zinc-500"} />
+            <span className={`font-mono text-sm tracking-widest transition-colors ${copied ? "text-green-400" : "text-zinc-300 group-hover:text-zinc-100"}`}>
+              {copied ? "Скопировано!" : SERVER_IP}
+            </span>
+            <Icon name="Copy" size={14} className="text-zinc-600 group-hover:text-zinc-400 transition-colors" />
+          </button>
         </motion.div>
 
         {/* Live indicator */}
@@ -155,7 +173,7 @@ export function HeroSection() {
           transition={{ delay: 1.0 }}
           className="max-w-2xl"
         >
-          <LedTicker text={t.hero.serverOnline} />
+          <LedTicker />
         </motion.div>
       </div>
     </section>
