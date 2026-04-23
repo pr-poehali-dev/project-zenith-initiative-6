@@ -1,46 +1,10 @@
 import { motion } from "framer-motion"
 import Icon from "@/components/ui/icon"
-
-const news = [
-  {
-    id: 1,
-    tag: "Update",
-    tagColor: "text-green-400 bg-green-950/50 border-green-900/50",
-    title: "Patch 1.25 — new locations and loot balance",
-    date: "April 18, 2026",
-    preview: "Added three new military locations in the north of the map. Revised the loot spawn table — M4 is now rarer, making gear hunting more exciting.",
-    readTime: "3 min",
-  },
-  {
-    id: 2,
-    tag: "Event",
-    tagColor: "text-orange-400 bg-orange-950/50 border-orange-900/50",
-    title: "Event 'Survivor Hunt' — April 25",
-    date: "April 15, 2026",
-    preview: "Special event with unique rewards. One player is the target, everyone else are hunters. The winner gets an exclusive skin and 3000 coins.",
-    readTime: "2 min",
-  },
-  {
-    id: 3,
-    tag: "Server",
-    tagColor: "text-blue-400 bg-blue-950/50 border-blue-900/50",
-    title: "Maintenance April 20, 03:00–06:00",
-    date: "April 12, 2026",
-    preview: "Scheduled server maintenance. Core update, database optimization. We apologize for any inconvenience.",
-    readTime: "1 min",
-  },
-  {
-    id: 4,
-    tag: "Shop",
-    tagColor: "text-red-400 bg-red-950/50 border-red-900/50",
-    title: "New privileges in the shop",
-    date: "April 8, 2026",
-    preview: "Added Survivor and Raider ranks with unique bonuses. Special 20% discount on all packages until end of April.",
-    readTime: "2 min",
-  },
-]
+import { useNews } from "@/context/NewsContext"
 
 export function NewsSection() {
+  const { news } = useNews()
+
   return (
     <section id="news" className="px-6 py-24">
       <div className="max-w-5xl mx-auto">
