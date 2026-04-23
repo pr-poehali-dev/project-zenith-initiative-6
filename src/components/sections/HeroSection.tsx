@@ -1,15 +1,19 @@
 import { motion } from "framer-motion"
 import Icon from "@/components/ui/icon"
+import { useLang } from "@/context/LanguageContext"
+import { LedTicker } from "@/components/LedTicker"
 
 const features = [
-  { icon: "Shield", title: "STABILITY", sub: "24/7 server uptime" },
-  { icon: "Crosshair", title: "FAIR PLAY", sub: "No cheats" },
-  { icon: "Users", title: "COMMUNITY", sub: "Help for beginners" },
-  { icon: "Settings", title: "BALANCED MODS", sub: "For comfortable gameplay" },
-  { icon: "Swords", title: "PVP", sub: "Hardcore battles" },
+  { icon: "Shield", titleKey: "STABILITY", subKey: "24/7 server uptime" },
+  { icon: "Crosshair", titleKey: "FAIR PLAY", subKey: "No cheats" },
+  { icon: "Users", titleKey: "COMMUNITY", subKey: "Help for beginners" },
+  { icon: "Settings", titleKey: "BALANCED MODS", subKey: "For comfortable gameplay" },
+  { icon: "Swords", titleKey: "PVP", subKey: "Hardcore battles" },
 ]
 
 export function HeroSection() {
+  const { t } = useLang()
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-zinc-950">
       {/* Background image */}
@@ -34,7 +38,7 @@ export function HeroSection() {
           <div className="flex-1 h-px bg-soda-500/40 max-w-[80px]" />
         </motion.div>
 
-        {/* Main title — distressed military font */}
+        {/* Main title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,8 +76,8 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-lg md:text-2xl font-display tracking-wide mb-10 uppercase"
         >
-          <span className="text-zinc-100">YOU'RE ALREADY HERE.&nbsp;</span>
-          <span className="text-soda-300">YOU JUST DON'T REALIZE IT YET.</span>
+          <span className="text-zinc-100">{t.hero.tagline1}&nbsp;</span>
+          <span className="text-soda-300">{t.hero.tagline2}</span>
         </motion.p>
 
         {/* Feature icons row */}
@@ -85,7 +89,7 @@ export function HeroSection() {
         >
           {features.map((f, i) => (
             <motion.div
-              key={f.title}
+              key={f.titleKey}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 + i * 0.07 }}
@@ -95,8 +99,8 @@ export function HeroSection() {
                 <Icon name={f.icon} fallback="Star" size={16} className="text-soda-300" />
               </div>
               <div>
-                <div className="text-xs font-display text-zinc-200 tracking-widest uppercase">{f.title}</div>
-                <div className="text-xs text-zinc-500">{f.sub}</div>
+                <div className="text-xs font-display text-zinc-200 tracking-widest uppercase">{f.titleKey}</div>
+                <div className="text-xs text-zinc-500">{f.subKey}</div>
               </div>
               {i < features.length - 1 && (
                 <div className="hidden sm:block w-px h-8 bg-zinc-700/50 ml-3" />
@@ -118,7 +122,7 @@ export function HeroSection() {
           >
             <Icon name="Server" size={18} className="text-soda-300 group-hover:text-zinc-900 transition-colors" />
             <span className="text-soda-200 group-hover:text-zinc-900 font-display tracking-[0.2em] uppercase text-sm transition-colors">
-              Connect
+              {t.hero.connect}
             </span>
             <Icon name="ChevronRight" size={18} className="text-soda-300 group-hover:text-zinc-900 group-hover:translate-x-1 transition-all" />
           </a>
@@ -134,14 +138,24 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="flex items-center gap-2 mt-8"
+          className="flex items-center gap-2 mt-8 mb-5"
         >
           <motion.div
             className="w-2 h-2 rounded-full bg-soda-300"
             animate={{ opacity: [1, 0.3, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />
-          <span className="text-xs text-zinc-500 tracking-widest uppercase font-display">Server online — join right now</span>
+          <span className="text-xs text-zinc-500 tracking-widest uppercase font-display">{t.hero.serverOnline}</span>
+        </motion.div>
+
+        {/* LED Ticker */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.0 }}
+          className="max-w-2xl"
+        >
+          <LedTicker text={t.hero.serverOnline} />
         </motion.div>
       </div>
     </section>

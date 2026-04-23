@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Black+Ops+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Black+Ops+One&family=Share+Tech+Mono&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -121,4 +121,21 @@
 
 .animate-gradient-shift {
   animation: gradient-shift 3s ease infinite;
+}
+
+/* LED ticker scroll animation */
+@keyframes led-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-led-scroll {
+  animation: led-scroll 18s linear infinite;
+  display: inline-block;
+  /* duplicate content so loop is seamless */
+  white-space: nowrap;
 }
