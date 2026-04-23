@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
 import Icon from "@/components/ui/icon"
 import { useSite } from "@/context/SiteContext"
+import { useLang } from "@/context/LanguageContext"
 
 interface KillEntry {
   id: number
@@ -35,6 +36,7 @@ const RANK_MEDALS: Record<number, string> = { 1: "🥇", 2: "🥈", 3: "🥉" }
 export function KillfeedSection() {
   const [kills, setKills] = useState<KillEntry[]>(initialKills)
   const { leaderboard, weekLabel } = useSite()
+  const { t } = useLang()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,11 +63,11 @@ export function KillfeedSection() {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">Killfeed</p>
+          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">{t.killfeed.subtitle}</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
-            Kill Feed
+            {t.killfeed.title}
           </h2>
-          <p className="text-zinc-500">What's happening on the server right now</p>
+          <p className="text-zinc-500">{t.killfeed.desc}</p>
         </motion.div>
 
         {/* Leaderboard */}
@@ -78,21 +80,21 @@ export function KillfeedSection() {
           <div className="px-6 py-4 border-b border-zinc-800/50 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Icon name="Trophy" size={18} className="text-yellow-400" />
-              <span className="text-sm font-medium text-zinc-100 font-display tracking-wide uppercase">Таблица лидеров</span>
+              <span className="text-sm font-medium text-zinc-100 font-display tracking-wide uppercase">{t.killfeed.leaderboard}</span>
             </div>
             <div className="flex items-center gap-2 text-xs text-zinc-500">
               <Icon name="CalendarDays" size={12} />
               <span>{weekLabel}</span>
-              <span className="px-2 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Сброс в воскресенье</span>
+              <span className="px-2 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">{t.killfeed.resetNote}</span>
             </div>
           </div>
 
           {/* Table header */}
           <div className="px-6 py-2 bg-zinc-900/80 border-b border-zinc-800/30 grid grid-cols-12 gap-2 text-xs font-medium text-zinc-600 uppercase tracking-wider">
-            <span className="col-span-1">#</span>
-            <span className="col-span-5">Игрок</span>
-            <span className="col-span-3 text-center">Убийства</span>
-            <span className="col-span-3 hidden md:block">Сервер</span>
+            <span className="col-span-1">{t.killfeed.rank}</span>
+            <span className="col-span-5">{t.killfeed.player}</span>
+            <span className="col-span-3 text-center">{t.killfeed.kills}</span>
+            <span className="col-span-3 hidden md:block">{t.killfeed.server}</span>
           </div>
 
           <div className="divide-y divide-zinc-800/20">
@@ -136,11 +138,11 @@ export function KillfeedSection() {
                 animate={{ opacity: [1, 0.3, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
-              <span className="text-sm font-medium text-zinc-300">Live Feed</span>
+              <span className="text-sm font-medium text-zinc-300">{t.killfeed.live}</span>
             </div>
             <span className="text-xs text-zinc-600 flex items-center gap-1.5">
               <Icon name="RefreshCw" size={12} />
-              Updates in real time
+              {t.killfeed.realtime}
             </span>
           </div>
 
@@ -165,13 +167,13 @@ export function KillfeedSection() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="text-zinc-100 font-medium text-sm">{kill.killer}</span>
-                      <span className="text-zinc-600 text-xs">killed</span>
+                      <span className="text-zinc-600 text-xs">{t.killfeed.killed}</span>
                       <span className="text-zinc-400 text-sm">{kill.victim}</span>
-                      <span className="text-zinc-600 text-xs">with</span>
+                      <span className="text-zinc-600 text-xs">{t.killfeed.with}</span>
                       <span className="text-soda-300 text-sm font-medium">{kill.weapon}</span>
                       {kill.distance && (
                         <>
-                          <span className="text-zinc-600 text-xs">from</span>
+                          <span className="text-zinc-600 text-xs">{t.killfeed.from}</span>
                           <span className="text-zinc-300 text-xs font-mono">{kill.distance}m</span>
                         </>
                       )}

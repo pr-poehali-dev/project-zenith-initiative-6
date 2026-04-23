@@ -2,9 +2,11 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import Icon from "@/components/ui/icon"
 import { useSite } from "@/context/SiteContext"
+import { useLang } from "@/context/LanguageContext"
 
 export function RulesSection() {
   const { rules } = useSite()
+  const { t } = useLang()
   const [activeCategory, setActiveCategory] = useState("general")
   const active = rules.find(c => c.id === activeCategory) ?? rules[0]
 
@@ -17,13 +19,11 @@ export function RulesSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">Rules</p>
+          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">{t.rules.subtitle}</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
-            SODA Server Rules
+            {t.rules.title}
           </h2>
-          <p className="text-zinc-500 max-w-xl mx-auto">
-            Violating the rules results in a ban without warning. Ignorance of the rules is not an excuse.
-          </p>
+          <p className="text-zinc-500 max-w-xl mx-auto">{t.rules.desc}</p>
         </motion.div>
 
         <div className="flex flex-wrap gap-2 justify-center mb-8">
@@ -84,7 +84,7 @@ export function RulesSection() {
         >
           <Icon name="AlertTriangle" fallback="Star" size={18} className="text-red-500 flex-shrink-0 mt-0.5" />
           <p className="text-sm text-zinc-500">
-            <span className="text-red-400 font-medium">Important:</span> Administration reserves the right to change rules without notice. Follow updates on Discord.
+            <span className="text-red-400 font-medium">{t.rules.important}</span> {t.rules.importantText}
           </p>
         </motion.div>
       </div>

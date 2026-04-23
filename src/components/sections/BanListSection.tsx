@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import Icon from "@/components/ui/icon"
 import { useSite } from "@/context/SiteContext"
+import { useLang } from "@/context/LanguageContext"
 
 export const severityConfig = {
   perm: { label: "Навсегда", color: "text-red-400 bg-red-950/50 border-red-900/50" },
@@ -13,6 +14,7 @@ export const severityConfig = {
 export function BanListSection() {
   const [search, setSearch] = useState("")
   const { bans } = useSite()
+  const { t } = useLang()
 
   const filtered = bans.filter(
     b => b.player.toLowerCase().includes(search.toLowerCase()) || b.reason.toLowerCase().includes(search.toLowerCase())
@@ -27,11 +29,11 @@ export function BanListSection() {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">Бан-лист</p>
+          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">{t.banlist.subtitle}</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
-            Нарушители
+            {t.banlist.title}
           </h2>
-          <p className="text-zinc-500">Мы не терпим читеров и токсиков. Все баны публичны.</p>
+          <p className="text-zinc-500">{t.banlist.desc}</p>
         </motion.div>
 
         <motion.div
@@ -43,7 +45,7 @@ export function BanListSection() {
           <Icon name="Search" size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500" />
           <input
             type="text"
-            placeholder="Поиск по нику или причине бана..."
+            placeholder={t.banlist.search}
             value={search}
             onChange={e => setSearch(e.target.value)}
             className="w-full pl-10 pr-4 py-3 rounded-xl bg-zinc-900/50 border border-zinc-800 text-zinc-300 placeholder-zinc-600 text-sm focus:outline-none focus:border-zinc-600 transition-colors"
@@ -57,15 +59,15 @@ export function BanListSection() {
           className="rounded-2xl border border-zinc-800/50 overflow-hidden"
         >
           <div className="px-6 py-3 bg-zinc-900/80 border-b border-zinc-800/50 grid grid-cols-12 gap-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">
-            <span className="col-span-3">Игрок</span>
-            <span className="col-span-4">Причина</span>
-            <span className="col-span-2 hidden md:block">Дата</span>
-            <span className="col-span-3">Срок</span>
+            <span className="col-span-3">{t.banlist.player}</span>
+            <span className="col-span-4">{t.banlist.reason}</span>
+            <span className="col-span-2 hidden md:block">{t.banlist.date}</span>
+            <span className="col-span-3">{t.banlist.duration}</span>
           </div>
 
           <div className="divide-y divide-zinc-800/30">
             {filtered.length === 0 ? (
-              <div className="py-12 text-center text-zinc-600 text-sm">Ничего не найдено</div>
+              <div className="py-12 text-center text-zinc-600 text-sm">{t.banlist.notFound}</div>
             ) : (
               filtered.map((ban, i) => (
                 <motion.div
@@ -100,7 +102,7 @@ export function BanListSection() {
         </motion.div>
 
         <div className="mt-4 text-center text-xs text-zinc-600">
-          Показано {filtered.length} из {bans.length} записей · Обновляется ежедневно
+          {t.banlist.total} {filtered.length} / {bans.length} · {t.banlist.updated}
         </div>
       </div>
     </section>

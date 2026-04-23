@@ -1,9 +1,11 @@
 import { motion } from "framer-motion"
 import Icon from "@/components/ui/icon"
 import { useNews } from "@/context/NewsContext"
+import { useLang } from "@/context/LanguageContext"
 
 export function NewsSection() {
   const { news } = useNews()
+  const { t } = useLang()
 
   return (
     <section id="news" className="px-6 py-24">
@@ -15,13 +17,13 @@ export function NewsSection() {
           className="flex items-end justify-between mb-10"
         >
           <div>
-            <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-3">News</p>
+            <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-3">{t.news.subtitle}</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-zinc-100">
-              What's new on SODA
+              {t.news.title}
             </h2>
           </div>
           <a href="#" className="hidden md:flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors">
-            All news
+            {t.news.allNews}
             <Icon name="ArrowRight" size={16} />
           </a>
         </motion.div>
@@ -55,7 +57,7 @@ export function NewsSection() {
                 </h3>
                 <p className="text-zinc-500 text-sm leading-relaxed line-clamp-2">{item.preview}</p>
                 <div className="flex items-center gap-2 mt-4 text-xs text-zinc-600 group-hover:text-zinc-400 transition-colors">
-                  <span>Read more</span>
+                  <span>{t.news.readMore}</span>
                   <Icon name="ArrowRight" size={12} className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
